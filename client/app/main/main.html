@@ -1,0 +1,62 @@
+<div class="container">
+  <center>
+    <h3>
+      FILL THIS AND WIN EXCITING GIFT VOUCHERS
+    </h3>
+  </center>
+
+  <br>
+
+  <form class="form-horizontal">
+    <div class="form-group" ng-show="$ctrl.isLoggedIn()">
+      <label class="control-label col-sm-2">Name:</label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" ng-model="$ctrl.getCurrentUser().name" disabled>
+        </div>
+    </div>
+    <div class="form-group" ng-show="$ctrl.isReferred">
+      <label class="control-label col-sm-2">Referred By:</label>
+      <div class="col-sm-8"> 
+        <input type="text" class="form-control" ng-model="$ctrl.referredUser.name" disabled>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4" ng-repeat="tile in $ctrl.tiles">
+        <div ng-class="tile.class" ng-click="$ctrl.selectTile(tile)">
+          {{tile.value}}
+        </div>
+      </div>
+    </div>
+
+    <div class="form-group" ng-hide="$ctrl.isSubmitted"> 
+      <div>
+        <button type="submit" class="btn btn-info btn-lg" id="submit_button" ng-click="$ctrl.submit()">
+        	<span ng-hide="$ctrl.isLoggedIn()">Login &&nbsp;</span>Submit
+        </button>
+      </div>
+    </div>
+  </form>
+
+  <form class="form-horizontal" ng-show="$ctrl.isSubmitted">
+    <div class="form-group">
+      <label class="control-label col-sm-2">Referral Link:</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" ng-model="$ctrl.referralLink" disabled>
+        </div>
+    </div>
+    <div class="form-group"> 
+      <div>
+        <center>
+          <button type="submit" class="btn btn-primary btn-lg" ng-click="$ctrl.shareOnFB()">
+            Share on Facebook
+          </button>
+        </center>
+      </div>
+    </div>
+  </form>
+  
+</div>
+
+  
+

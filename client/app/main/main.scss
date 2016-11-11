@@ -1,0 +1,30 @@
+.tile {
+  border-radius: 3%;
+  height: 300px;
+  width: 300px;
+  left: 0;
+  right: 0;
+  margin: auto;
+  text-align: center;
+  padding: 130px;
+  font-size: 30px;
+  background-color: #2980b9; 
+  margin-bottom: 30px;
+  margin-top: 30px; 
+}
+
+.tile:hover { 
+  background-color: #9b59b6;
+}
+
+.selected {  
+  box-shadow: 5px 5px 5px 5px #8e44ad;
+  background-color: #9b59b6;
+}
+
+#submit_button {
+  margin: 0 auto 0 auto;
+  width: 200px;
+  display: block;
+  font-weight: bolder;
+}
